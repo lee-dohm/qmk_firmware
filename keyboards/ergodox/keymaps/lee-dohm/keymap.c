@@ -1,6 +1,7 @@
 #include "ergodox.h"
 #include "debug.h"
 #include "action_layer.h"
+#include "version.h"
 
 #define BASE 0 // default layer - Dvorak layout
 #define ARRW 1 // Arrows and Special Functions
@@ -96,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 2: Numeric Keypad
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |  Reset |      |      |      |      |      |      |           |      |      |      |  /   |  *   |  -   |        |
+ * |  Reset |      |      |      |      |      |Version|           |      |      |      |  /   |  *   |  -   |        |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |        |      |      |      |      |      |      |           |      |      |  7   |  8   |  9   |  +   |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -117,7 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // NUM PAD
 [NUMP] = KEYMAP(
        // left hand
-       RESET,  KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
+       RESET,  KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,   M(0),
        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
@@ -188,9 +189,7 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
       switch(id) {
         case 0:
         if (record->event.pressed) {
-          register_code(KC_RSFT);
-        } else {
-          unregister_code(KC_RSFT);
+            SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP "@" QMK_VERSION);
         }
         break;
       }
