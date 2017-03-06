@@ -12,11 +12,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |  Esc   |   1  |   2  |   3  |   4  |   5  | Esc  |           | Lk2  |   6  |   7  |   8  |   9  |   0  |   =    |
+ * |  Grv   |   1  |   2  |   3  |   4  |   5  | Esc  |           | Lk2  |   6  |   7  |   8  |   9  |   0  |   =    |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |  Grv   |   '  |   ,  |   .  |   P  |   Y  |   [  |           |  ]   |   F  |   G  |   C  |   R  |   L  |   /    |
+ * |  Tab   |   '  |   ,  |   .  |   P  |   Y  |   [  |           |  ]   |   F  |   G  |   C  |   R  |   L  |   /    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |  Tab   |   A  |   O  |   E  |   U  |   I  |------|           |------|   D  |   H  |   T  |   N  |   S  |   -    |
+ * |   \    |   A  |   O  |   E  |   U  |   I  |------|           |------|   D  |   H  |   T  |   N  |   S  |   -    |
  * |--------+------+------+------+------+------|  L1  |           |  L1  |------+------+------+------+------+--------|
  * | LShift |   ;  |   Q  |   J  |   K  |   X  |      |           |      |   B  |   M  |   W  |   V  |   Z  | RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
@@ -34,9 +34,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_*
 [BASE] = KEYMAP(  // layer 0 : default
         // left hand
-        KC_ESC,         KC_1,           KC_2,    KC_3,   KC_4,   KC_5,   KC_ESC,
-        KC_GRV,         KC_QUOT,        KC_COMM, KC_DOT, KC_P,   KC_Y,   KC_LBRC,
-        KC_TAB,         KC_A,           KC_O,    KC_E,   KC_U,   KC_I,
+        KC_GRV,         KC_1,           KC_2,    KC_3,   KC_4,   KC_5,   KC_ESC,
+        KC_TAB,         KC_QUOT,        KC_COMM, KC_DOT, KC_P,   KC_Y,   KC_LBRC,
+        KC_BSLS,        KC_A,           KC_O,    KC_E,   KC_U,   KC_I,
         KC_LSFT,        KC_SCLN,        KC_Q,    KC_J,   KC_K,   KC_X,   MO(ARRW),
         KC_BSLS,        KC_BSLS,        KC_LCTL, KC_LALT,KC_LGUI,
                                               ALT_T(KC_APP),  KC_LGUI,
